@@ -12,6 +12,7 @@ window.onload = function() {
     stars.forEach(star => {
         star.onclick = function() {
             selectedRating = parseInt(this.getAttribute('data-value'));
+            // Remove active class from all stars, then add to the clicked one
             stars.forEach(s => s.classList.remove('active'));
             this.classList.add('active');
         };
@@ -32,6 +33,9 @@ window.onload = function() {
                 date: new Date().toLocaleString()
             };
 
+            // --- DEBUG LINE: This shows you the data in the Inspect Console ---
+            console.log("Feedback Saved to LocalStorage:", logEntry);
+
             // Save for Admin
             let allLogs = JSON.parse(localStorage.getItem('transportFeedback')) || [];
             allLogs.push(logEntry);
@@ -45,12 +49,17 @@ window.onload = function() {
                 <p>"${feedbackText || 'Excellent journey'}"</p>
                 <span style="font-size:11px; opacity:0.6">- Just now</span>
             `;
-            grid.prepend(card);
+            
+            if (grid) {
+                grid.prepend(card);
+            }
 
-            // Hide form
-            inputArea.style.display = "none";
-            thanksMsg.style.display = "block";
-            thanksMsg.classList.remove('hidden');
+            // Hide form and show thanks message
+            if (inputArea) inputArea.style.display = "none";
+            if (thanksMsg) {
+                thanksMsg.style.display = "block";
+                thanksMsg.classList.remove('hidden');
+            }
         };
     }
 };
