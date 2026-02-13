@@ -577,3 +577,65 @@ body {
     }
     .navbar { padding: 15px 20px; }
 }
+/*----------------------------------------------------
+/* Styling for the Add Event Form inputs */
+.custom-input {
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+}
+
+.custom-input:focus {
+    border-color: #7b74bc;
+    outline: none;
+}
+
+#event-category {
+    cursor: pointer;
+}
+
+#event-summary {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    resize: vertical;
+}
+/* Container for scrolling */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 500px; /* Adjust this height as needed */
+    overflow-y: auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+}
+
+/* Custom scrollbar for a better look */
+.experience-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.experience-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.experience-grid::-webkit-scrollbar-thumb {
+    background: #7b74bc;
+    border-radius: 10px;
+}
+
+.experience-grid::-webkit-scrollbar-thumb:hover {
+    background: #9a94d6;
+}

@@ -2,66 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | GIKI-HUB</title>
+    <title>Admin Approval | GIKI-HUB</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="admin-page">
-
+<body class="social-page">
     <nav class="navbar">
         <div class="nav-container">
-            <a href="transport.html" class="nav-brand">← BACK TO TRANSPORT</a>
-            <h2 style="color: white;">Transport Admin Panel</h2>
+            <a href="social-event.html" class="nav-brand">← BACK TO SOCIAL</a>
         </div>
     </nav>
 
     <header class="menu-header">
-        <h1>Recent Feedback Logs</h1>
-        <p>Review student and employee experiences below</p>
+        <h1>Pending Approvals</h1>
+        <p>Review and approve student-submitted events</p>
     </header>
 
     <main class="schedule-container">
-        <div class="experience-box">
-            <div id="admin-log-grid" class="experience-grid">
-                </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <button id="clear-logs" class="buy-now-btn" style="background: #e74c3c;">Clear All Logs</button>
-            </div>
-        </div>
+        <div id="admin-list" class="experience-grid"></div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const logGrid = document.getElementById('admin-log-grid');
-            const clearBtn = document.getElementById('clear-logs');
-            
-            // Load feedback from localStorage
-            const feedbacks = JSON.parse(localStorage.getItem('transportFeedback')) || [];
-
-            if (feedbacks.length === 0) {
-                logGrid.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No feedback logs found.</p>";
-            } else {
-                feedbacks.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'exp-card';
-                    card.innerHTML = `
-                        <div class="exp-stars">${'★'.repeat(item.rating)}</div>
-                        <p><strong>Message:</strong> ${item.text || "No comment"}</p>
-                        <span class="exp-user">Submitted: ${item.date}</span>
-                    `;
-                    logGrid.prepend(card);
-                });
-            }
-
-            // Clear Logs Logic
-            clearBtn.addEventListener('click', () => {
-                if(confirm("Are you sure you want to delete all logs?")) {
-                    localStorage.removeItem('transportFeedback');
-                    location.reload();
-                }
-            });
-        });
-    </script>
+    <script src="admin.js"></script>
 </body>
-</html>
+</html>             

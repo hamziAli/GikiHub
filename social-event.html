@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Events | GIKI-HUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="social-page">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">← GIKIHUB</a>
+            <div class="nav-links">
+                <a href="https://giki.edu.pk/" target="_blank">Official GIKI</a>
+                <a href="https://salahtimes-giki.github.io/" target="_blank">Prayer Timings</a>
+                <a href="https://giktransport.giki.edu.pk/" target="_blank">GIK-TRANSPORT</a>
+                <a href="admin.html" style="color: #ffcc00; font-weight: bold;">Admin Panel</a>
+                <img src="img/cropped-giki-logo-updated (1) (1).png" alt="GIKI Logo" class="logo">
+            </div>
+        </div>
+    </nav>
+
+    <header class="menu-header">
+        <h1>Social Events</h1>
+        <p>Society Updates, Upcoming, and Past Events</p>
+    </header>
+
+    <main class="schedule-container">
+        <div class="experience-box">
+            <h2 class="section-title">Society Updates</h2>
+            <div class="experience-grid" id="society-grid"></div>
+        </div>
+
+        <div class="experience-box">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="experience-grid" id="upcoming-grid"></div>
+        </div>
+
+        <div class="experience-box">
+            <h2 class="section-title">Past Events</h2>
+            <div class="experience-grid" id="past-grid"></div>
+        </div>
+
+        <div class="table-frame" id="input-area" style="margin-top: 80px; padding: 30px; border-top: 2px solid #7b74bc;">
+            <h2 style="color: #7b74bc; margin-bottom: 10px;">Submit New Event</h2>
+            <p style="font-size: 0.85em; margin-bottom: 20px; opacity: 0.7;">Events will appear above once approved by Admin.</p>
+            
+            <div class="feedback-input-box" style="display: grid; gap: 15px;">
+                <div style="display: flex; gap: 10px;">
+                    <input type="email" id="user-email" placeholder="GIKI Email" class="custom-input">
+                    <input type="password" id="user-pass" placeholder="Password" class="custom-input">
+                </div>
+                
+                <input type="text" id="event-title" placeholder="Event Title" class="custom-input">
+                
+                <select id="event-category" class="custom-input">
+                    <option value="society-grid">Society Update</option>
+                    <option value="upcoming-grid">Upcoming Event</option>
+                    <option value="past-grid">Past Event</option>
+                </select>
+
+                <textarea id="event-summary" placeholder="Event Summary & Details" style="min-height: 100px; padding:15px; background:#222; color:white; border-radius:10px; border:1px solid #444;"></textarea>
+                
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px;">
+                    <label style="font-size: 11px; display: block; margin-bottom: 5px;">Event Poster (Max 1MB):</label>
+                    <input type="file" id="event-image" accept="image/*">
+                </div>
+
+                <button class="buy-now-btn" id="submit-event" style="width: 100%;">Submit for Approval</button>
+            </div>
+        </div>
+
+        <p id="thank-you-msg" class="hidden" style="color: #4CAF50; text-align:center; margin-top: 20px; font-weight: bold;">
+            Success! Your event is pending admin review.
+        </p>
+    </main>
+
+    <script src="social.js"></script>
+</body>
+</html>
