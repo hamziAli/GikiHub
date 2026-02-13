@@ -1,0 +1,226 @@
+/* ===================================================
+   1. GLOBAL RESETS & FONTS
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a; /* Matches your dashboard background */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ===================================================
+   2. NAVIGATION BAR (Sleeker & Smaller)
+   =================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /* Reduced vertical padding from 15px to 8px for a smaller bar */
+    padding: 8px 50px; 
+    display: flex;
+    align-items: center;
+    background-color: #7b74bc; /* Matches your brand purple */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Added height limit to keep it consistent */
+    height: 60px; 
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.4rem; /* Slightly smaller font */
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Tighter gap for a cleaner look */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem; /* Smaller font for a professional feel */
+    transition: 0.3s ease;
+}
+
+/* Updated Logo Styling for a small bar */
+.logo { 
+    height: 40px; /* Reduced from 55px/45px to fit the smaller height */
+    width: auto;
+    display: block;
+}
+
+/* ===================================================
+   3. MESS CONTAINER & SPACING
+   =================================================== */
+.mess-container {
+    max-width: 900px;
+    margin: 80px auto; /* Large top/bottom spacing for the whole page */
+    padding: 0 40px;    /* Side spacing for mobile */
+}
+
+.mess-header {
+    text-align: left;
+    margin-bottom: 60px; /* Space between title and the first day card */
+}
+
+.mess-header h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.mess-header p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================================
+   4. DAY SELECTION CARDS (The spacing fix)
+   =================================================== */
+.day-card {
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent glass look */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    
+    /* Internal Spacing: Makes the cards big like "Social Events" */
+    padding: 50px 40px; 
+    
+    /* External Spacing: Gap between cards */
+    margin-bottom: 30px; 
+    
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.6rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.day-card:hover {
+    background: rgba(123, 116, 188, 0.15);
+    border-color: #7b74bc;
+    transform: translateY(-8px); /* Lift effect from dashboard */
+}
+
+/* ===================================================
+   5. MEAL LIST SPACING (When a day is clicked)
+   =================================================== */
+.meal-label {
+    color: #7b74bc;
+    font-weight: 800;
+    font-size: 1.5rem;
+    
+    /* Large gap above headers like "Lunch" or "Dinner" */
+    margin-top: 60px; 
+    margin-bottom: 25px;
+    
+    border-left: 6px solid #7b74bc;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.food-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    
+    /* Internal Spacing for food items */
+    padding: 30px; 
+    
+    /* Vertical gap between food items */
+    margin-bottom: 20px; 
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===================================================
+   6. RATING DROPDOWN & AVG DISPLAY
+   =================================================== */
+.avg-text {
+    color: #ffcc00; /* Gold/Star color */
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    display: block;
+}
+
+.rate-select {
+    background: #252525;
+    color: #7b74bc;
+    border: 2px solid #7b74bc;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rate-select:focus {
+    background: #7b74bc;
+    color: white;
+}
+
+/* ===================================================
+   7. BACK BUTTON (Pill Style)
+   =================================================== */
+.action-footer {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 120px; /* Space at end of scroll */
+}
+
+.back-pill {
+    background: #7b74bc;
+    color: white;
+    border: none;
+    padding: 18px 60px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(123, 116, 188, 0.2);
+}
+
+.back-pill:hover {
+    background: white;
+    color: #7b74bc;
+    transform: scale(1.05);
+}
+
+.hidden { display: none !important; }
+
+/* ===================================================
+   8. RESPONSIVE ADJUSTMENTS
+   =================================================== */
+@media (max-width: 768px) {
+    .mess-container { padding: 0 20px; margin-top: 40px; }
+    .mess-header h1 { font-size: 2.4rem; }
+    .day-card { padding: 35px 20px; font-size: 1.2rem; }
+}
