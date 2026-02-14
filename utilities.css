@@ -221,3 +221,83 @@ body {
     .nav-logo { height: 45px; }
     .menu-header h1 { font-size: 2.5rem; }
 }
+@media (max-width: 600px) {
+    /* 1. Prevent the navbar from squishing its content */
+    .navbar {
+        height: auto; /* Let it grow vertically if links wrap */
+        padding: 15px 10px;
+    }
+
+    /* 2. Stack the links or make them wrap */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Allows links to go to a new line instead of overlapping */
+        justify-content: center;
+        gap: 10px; /* Reduce gap so they fit better */
+    }
+
+    .nav-links a {
+        font-size: 12px; /* Smaller font for mobile */
+        white-space: nowrap; /* Prevents single words from breaking */
+    }
+
+    /* 3. Fix the "Back" button text size */
+    .nav-brand {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+}
+/* --- RESPONSIVE UTILITY GRID --- */
+.utility-grid {
+    display: grid;
+    /* This allows the two cards to sit side-by-side on desktop but stack on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ensure the container has some side padding on mobile */
+.mess-container {
+    padding: 0 20px;
+}
+
+/* --- RESPONSIVE BREAKPOINT (768px and below) --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; /* Allow navbar to expand vertically */
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stack the BACK button and links */
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Wrap links if they are too wide */
+        justify-content: center;
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    .nav-logo {
+        height: 40px; /* Shrink logo slightly for mobile */
+    }
+
+    .menu-header h1 {
+        font-size: 1.8rem; /* Smaller heading on mobile */
+        margin-top: 20px;
+    }
+
+    .themed-card {
+        margin-bottom: 10px;
+    }
+
+    .back-pill {
+        width: 100%; /* Make button easier to tap */
+        padding: 15px 0;
+    }
+}

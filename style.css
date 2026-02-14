@@ -849,3 +849,204 @@ body {
 }
 /*-------------------------------------------------------------------*/
 
+/* ===================================================
+   MOBILE RESPONSIVE OVERRIDES
+   =================================================== */
+@media (max-width: 768px) {
+    /* 1. Navbar Fix: Prevents Overlapping */
+    .navbar {
+        height: auto !important; /* Let bar grow taller */
+        padding: 15px 10px !important;
+    }
+
+    .nav-container {
+        flex-direction: column !important; /* Stack BRAND/BACK above links */
+        gap: 12px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap !important; /* Allow links to wrap to new lines */
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 11px !important; /* Smaller text for mobile */
+    }
+
+    /* 2. Grid Fixes: Force single column layout */
+    .menu-grid, .utility-grid, .food-grid, .experience-grid {
+        grid-template-columns: 1fr !important;
+        padding: 15px !important;
+        gap: 20px !important;
+    }
+
+    /* 3. Hero Section (index.html) Fixes */
+    .container {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .brand-name {
+        font-size: 2.5rem !important;
+    }
+
+    .campus-img {
+        width: 100% !important;
+        max-width: 320px;
+        height: auto !important;
+    }
+}
+/* --- SHARED RESPONSIVE GRID --- */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* --- FORM STYLING & RESPONSIVENESS --- */
+#input-area {
+    margin-top: 80px;
+    padding: 30px;
+    border-top: 2px solid #7b74bc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#event-summary {
+    min-height: 100px;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #444;
+    width: 100%;
+    font-family: inherit;
+}
+
+.file-upload-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.file-upload-box label {
+    font-size: 11px;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.admin-link {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- MOBILE BREAKPOINT (768px and below) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    .input-row {
+        flex-direction: column; /* Stacks Email and Password fields */
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr; /* Single column for event cards */
+    }
+
+    .menu-header h1 {
+        font-size: 2rem;
+    }
+
+    #input-area {
+        padding: 20px 15px;
+    }
+}
+/* --- MESS CONTAINER SPACING --- */
+.mess-container {
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- DAY BUTTONS GRID --- */
+/* Makes the Monday-Sunday buttons look like cards */
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* --- MEAL ITEMS (The dynamic rows) --- */
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+}
+
+/* --- MOBILE BREAKPOINT --- */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none; /* Often best to hide extra links on mobile mess page to focus on food */
+    }
+
+    .mess-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Stack the food name and the rating dropdown on very small screens */
+    .food-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .rate-select {
+        width: 100%; /* Make the dropdown easy to tap with a thumb */
+    }
+
+    .day-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for days on mobile */
+    }
+}

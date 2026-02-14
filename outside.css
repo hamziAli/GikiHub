@@ -174,3 +174,63 @@ body {
     cursor: pointer;
     text-transform: uppercase;
 }
+/* --- MAIN CONTAINER --- */
+.outside-container {
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE FOOD GRID --- */
+.food-grid {
+    display: grid;
+    /* This makes the cards wrap automatically as the screen shrinks */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- THEMED CARD STYLING --- */
+.themed-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row are equal height */
+}
+
+/* --- NAVBAR RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .menu-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr; /* Single column for easier scrolling on phones */
+    }
+
+    .back-pill {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
