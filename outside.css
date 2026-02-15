@@ -1,0 +1,236 @@
+/* ===================================================
+   OUTSIDE GIKI STYLES
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* NAVBAR FIX */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #7b74bc;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.nav-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+}
+
+/* CONTENT GRID */
+.outside-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #7b74bc;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* THEMED CARD - SOCIETY UPDATES STYLE */
+.themed-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(123, 116, 188, 0.2);
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.themed-card:hover {
+    transform: translateY(-8px);
+    border-color: #7b74bc;
+}
+
+.card-body {
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.card-body i {
+    font-size: 3rem;
+    color: #7b74bc;
+    margin-bottom: 10px;
+}
+
+.card-body h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* DARK INSET BOX (SOCIETY UPDATES LOOK) */
+.card-footer-box {
+    background: #141414; /* Inset color */
+    margin: 0 15px 15px 15px;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-footer-box p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* BUTTONS */
+.open-pill {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid #7b74bc;
+    color: #7b74bc;
+    text-decoration: none !important;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.open-pill:hover {
+    background: #7b74bc;
+    color: #ffffff;
+}
+
+.action-footer {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.back-pill {
+    background: #7b74bc;
+    color: white;
+    padding: 18px 50px;
+    border-radius: 100px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+/* --- MAIN CONTAINER --- */
+.outside-container {
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE FOOD GRID --- */
+.food-grid {
+    display: grid;
+    /* This makes the cards wrap automatically as the screen shrinks */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- THEMED CARD STYLING --- */
+.themed-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row are equal height */
+}
+
+/* --- NAVBAR RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .menu-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr; /* Single column for easier scrolling on phones */
+    }
+
+    .back-pill {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

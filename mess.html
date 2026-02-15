@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Menu | GIKI HUB</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="mess-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="main_menu.html" class="nav-brand">← BACK</a>
+            <div class="nav-links">
+                <a href="https://giki.edu.pk/" target="_blank">Official GIKI</a>
+                <a href="https://salahtimes-giki.github.io/" target="_blank">Prayer Timings</a>
+                <a href="https://giktransport.giki.edu.pk/" target="_blank">GIK-TRANSPORT</a>
+                <img src="img/cropped-giki-logo-updated (1) (1).png" alt="GIKI Logo" class="logo">
+            </div>
+        </div>
+    </nav>
+
+    <main class="mess-container">
+        <header class="mess-header">
+            <h1 id="mess-title">Mess Menu</h1>
+            <p id="mess-subtitle">Select a day to explore the menu</p>
+        </header>
+
+        <div id="dynamic-content" class="menu-content-wrapper"></div>
+
+        <div class="action-footer">
+            <button id="back-btn" class="back-pill hidden" onclick="loadDays()">← Back to Days</button>
+        </div>
+    </main>
+
+    <script src="mess.js"></script>
+</body>
+</html>

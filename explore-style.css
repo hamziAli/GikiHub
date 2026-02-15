@@ -1,0 +1,174 @@
+/* --- Variables --- */
+:root {
+    --primary-purple: #a29bfe;
+    --dark-purple: #7b74bc;
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --nav-purple: rgba(108, 92, 231, 0.2); /* Transparent purple for glass effect */
+}
+
+/* --- Global Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Modern Purple Glass Navbar --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #7b74bc(18, 18, 18, 0.8); 
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid var(--dark-purple);
+    padding: 12px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-purple);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #efefef;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-purple);
+}
+
+.nav-logo {
+    height: 45px;
+    filter: drop-shadow(0 0 5px var(--dark-purple));
+}
+
+/* --- Main Content --- */
+.explore-container {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.explore-header h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 800;
+    color: var(--primary-purple);
+    text-shadow: 0 0 15px rgba(162, 155, 254, 0.3);
+}
+
+.explore-header p {
+    color: #bbb;
+    font-size: 1.1rem;
+}
+
+/* --- Responsive Grid --- */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* --- Responsive Cards --- */
+.explore-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-purple);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
+}
+
+/* Fix for varied picture sizes */
+.card-image {
+    width: 100%;
+    height: 250px; /* Fixed height for all images */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resolves stretching and gaps */
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.explore-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h2 {
+    font-size: 1.3rem;
+    color: var(--primary-purple);
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* --- Mobile Breakpoint --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simplifies mobile view */
+    }
+    
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-header h1 {
+        font-size: 2.2rem;
+    }
+}

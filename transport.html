@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport | GIKI-HUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="transport-page">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="main_menu.html" class="nav-brand">← BACK</a>
+           <div class="nav-links">
+            <a href="https://giki.edu.pk/" target="_blank">Official GIKI</a>
+            <a href="https://salahtimes-giki.github.io/" target="_blank">Prayer Timings</a>
+            <a href="https://giktransport.giki.edu.pk/" target="_blank">GIK-TRANSPORT</a>
+            <img src="\img\cropped-giki-logo-updated (1) (1).png" alt="GIKI Logo" class="logo">
+        </div>
+        </div>
+    </nav>
+
+    <header class="menu-header">
+        <h1>Weekly Transport Schedule</h1>
+
+
+        <p>Bus routes for Students and Employees</p>
+    </header>
+
+    <main class="schedule-container">
+        <div class="table-frame">
+            <table class="transport-table">
+                <thead>
+                    <tr><th>Type</th><th>Route</th><th>Day</th><th>Time</th></tr>
+                </thead>
+                <tbody id="transport-data">
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Rawalpindi</td><td>Friday</td><td>12:00 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Islamabad</td><td>Friday</td><td>12:00 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Peshawar</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Abbottabad</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>GIKI to Peshawar</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Islamabad</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Rawalpindi</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>GIKI to Islamabad</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>GIKI to Abbottabad</td><td>Friday</td><td>05:45 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>Rawalpindi to GIKI</td><td>Sunday</td><td>11:00 AM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>Islamabad to GIKI</td><td>Sunday</td><td>11:00 AM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>Abbottabad to GIKI</td><td>Sunday</td><td>04:00 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>Abbottabad to GIKI</td><td>Sunday</td><td>04:00 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>Islamabad to GIKI</td><td>Sunday</td><td>04:00 PM</td></tr>
+                    <tr><td><span class="badge employee">EMPLOYEE</span></td><td>Peshawar to GIKI</td><td>Sunday</td><td>04:00 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>GIKI to Islamabad</td><td>Sunday</td><td>05:00 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>Rawalpindi to GIKI</td><td>Sunday</td><td>05:00 PM</td></tr>
+                    <tr><td><span class="badge student">STUDENT</span></td><td>Peshawar to GIKI</td><td>Sunday</td><td>05:00 PM</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <section class="action-footer">
+        <div class="action-card">
+            <div class="action-text">
+                <h2>Ready to travel?</h2>
+                <p>Secure your seat now through the Official Portal.</p>
+            </div>
+            <a href="https://giktransport.giki.edu.pk/" target="_blank" class="buy-now-pill">Buy Ticket Now</a>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="experience-container">
+            <div class="experience-box">
+                <h2 class="section-title">Community Experiences</h2>
+                <div class="experience-grid" id="experience-grid">
+                    </div>
+
+                <div class="feedback-input-box">
+                    <div id="input-area">
+                        <h3>Share Your Feedback</h3>
+                        <div class="star-rating">
+                            <span class="star" data-value="5">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="1">★</span>
+                        </div>
+                        <textarea id="user-suggestion" placeholder="How was your ride?"></textarea>
+                        <button class="buy-now-btn" id="submit-feedback">Submit Feedback</button>
+                    </div>
+                    <p id="thank-you-msg" class="hidden">Thank you! Your feedback is live and saved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="transport.js"></script>
+</body>
+</html>

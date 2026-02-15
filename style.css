@@ -1,0 +1,1052 @@
+/* ===================================================
+   1. GLOBAL RESETS & FONTS
+   Ensures consistent spacing across all browsers.
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Includes padding/border in the element's total width */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a; /* Dark theme background */
+    color: #ffffff;            /* Global text color */
+    line-height: 1.6;          /* Improves readability of text */
+}
+
+/* ===================================================
+   2. NAVIGATION BAR (Purple Theme - Fixed Logo)
+   =================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 10px 50px; /* Reduced padding for a sleeker look */
+    display: flex;
+    align-items: center;
+    background-color: #7b74bc; /* Solid purple to match your button */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1300px; /* Slightly wider to match modern screens */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left side: Brand Name */
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Matches your screenshot */
+}
+
+/* Right side: Links & Logo */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between links */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0; /* Subtle light grey on hover */
+}
+
+/* Logo styling - Filter REMOVED to show original colors */
+.logo { 
+    height: 55px; /* Size adjusted to fit the bar */
+    width: auto;
+    display: block;
+    /* filter: brightness(0) invert(1);  <-- REMOVED THIS LINE */
+}
+/* ===================================================
+   3. HERO SECTION (LANDING PAGE)
+   The main visual area users see first.
+   =================================================== */
+.hero-section {
+    min-height: 80vh;         /* Takes up 80% of the screen height */
+    display: flex;
+    align-items: center;      /* Centers content vertically */
+    justify-content: center;   /* Centers content horizontally */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 60px;                /* Space between the image and the text */
+    max-width: 1100px;
+    padding: 20px;
+}
+
+/* Glassmorphism frame around the campus image */
+.window-frame {
+    border: 2px solid #7b74bc;
+    border-radius: 25px;
+    padding: 10px;
+    position: relative;
+    background: rgba(255,255,255,0.05); /* Semi-transparent background */
+}
+
+.campus-img {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;        /* Ensures image fills the area without stretching */
+    border-radius: 20px;
+}
+
+.brand-name {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-underline-offset: 10px; /* Space between text and the underline */
+}
+
+/* Call to Action (CTA) Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background: #7b74bc;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;      /* Fully rounded corners */
+    font-weight: 700;
+    transition: 0.3s;         /* Smooth transition for hover effects */
+}
+
+.cta-button:hover {
+    transform: translateY(-5px); /* Moves button up slightly on hover */
+    background: #8e87d4;         /* Lightens the purple color */
+}
+
+/* ===================================================
+   4. MENU DASHBOARD
+   The header and the grid of clickable cards.
+   =================================================== */
+.menu-header { 
+    text-align: center; 
+    padding: 50px 20px; 
+}
+
+.menu-header h1 { 
+    color: #7b74bc; 
+    font-size: 3rem; 
+}
+
+/* The Grid Container */
+.menu-grid {
+    display: grid;
+    /* auto-fit: fills the row; minmax: cards won't get smaller than 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 50px;      /* Centers the grid and adds bottom margin */
+    padding: 20px;
+}
+
+/* Individual Dashboard Cards */
+.menu-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(123, 116, 188, 0.2);
+    border-radius: 20px;
+    padding: 35px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);    /* Lift effect */
+    border-color: #7b74bc;          /* Changes border to solid purple */
+    background: rgba(123, 116, 188, 0.1); /* Subtle purple tint */
+}
+
+/* Styling for the Emojis/Icons inside cards */
+.menu-card .icon { 
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+}
+/* ===================================================
+   5. MAP SECTION (CENTERED)
+   Uses Flexbox to ensure the map is perfectly aligned.
+   =================================================== */
+.map-section {
+    padding: 80px 20px;
+    display: flex;             /* Enables Flexbox */
+    flex-direction: column;    /* Stacks title and map vertically */
+    align-items: center;       /* Centers items horizontally */
+    justify-content: center;   /* Centers items vertically */
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px;         /* Prevents map from getting too wide on big screens */
+    text-align: center;        /* Centers the title text */
+}
+
+.map-title {
+    font-size: 2.5rem;
+    color: #7b74bc;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.map-frame {
+    border-radius: 30px;
+    overflow: hidden;          /* Clips map corners to match the border radius */
+    border: 3px solid #7b74bc; /* Signature purple border */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Adds depth */
+}
+
+/* Ensures the iframe inside the frame behaves correctly */
+.map-frame iframe {
+    display: block;
+    width: 100%;
+}
+/* This adds the big space at the top of the menu page */
+.menu-header {
+    text-align: center;
+    padding: 100px 20px 60px; /* Top, Sides, Bottom spacing */
+}
+
+/* This creates the grid layout with gaps between the cards */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto 100px; /* Centers the grid and adds space at the bottom */
+    padding: 0 20px;
+}
+
+/* This adds internal padding to the cards so the text isn't touching the borders */
+.menu-card {
+    padding: 40px;
+    margin-bottom: 10px; /* Extra safety margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+}
+/* style.css */
+
+.content-box {
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    /* Adds internal padding to ensure text doesn't hit container edges */
+    padding: 20px; 
+    /* Centers the text content inside the box */
+    text-align: left; 
+}
+
+.brand-name {
+    font-size: 4.5rem;
+    font-weight: 800;
+    /* Large gap below the title to separate it from the tagline */
+    margin-bottom: 30px; 
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    color: #ffffff;
+}
+
+.tagline {
+    font-size: 1.6rem;
+    font-weight: 400;
+    /* Significant gap below the tagline to separate it from the button */
+    margin-bottom: 60px; 
+    color: #b3b3b3;
+    line-height: 1.4;
+}
+
+.cta-button {
+    display: inline-block;
+    /* Vertical and Horizontal padding inside the button */
+    padding: 22px 70px; 
+    background-color: #7b74bc;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    /* Smooth transition for the hover spacing effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ===================================================
+   6. Transport SECTION (CENTERED)
+   
+   =================================================== */
+/* ===================================================
+   1. GLOBAL RESET & BASE STYLES
+   =================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===================================================
+   2. NAVIGATION BAR
+   =================================================== */
+.navbar { 
+    position: sticky; 
+    top: 0; 
+    padding: 15px 50px; 
+    background: #7b74bc; 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.nav-brand { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 800; 
+    font-size: 1.2rem; 
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 700; 
+}
+
+/* Specific Booking Button in Nav */
+.nav-booking-link { 
+    background: white; 
+    color: #7b74bc !important; 
+    padding: 8px 18px; 
+    border-radius: 6px; 
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.nav-booking-link:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.logo { 
+    height: 45px; 
+}
+
+/* ===================================================
+   3. TRANSPORT TABLE (SCHEDULE)
+   =================================================== */
+.menu-header {
+    text-align: center;
+    /* First number is Top/Bottom spacing, Second is Left/Right */
+    padding: 80px 20px 40px 20px; 
+    
+    /* Adds space between the header and the table below it */
+    margin-bottom: 20px; 
+}
+
+.menu-header h1 {
+    font-size: 3rem;
+    color: #7b74bc;
+    /* Adds space between the Title and the Subtitle */
+    margin-bottom: 15px; 
+    font-weight: 800;
+}
+
+.menu-header p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.schedule-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.table-frame { 
+    border: 2px solid #7b74bc; 
+    border-radius: 25px; 
+    overflow: hidden; 
+    background: rgba(255,255,255,0.02); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.transport-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.transport-table th { 
+    background: #7b74bc; 
+    padding: 18px; 
+    text-align: left; 
+    text-transform: uppercase;
+}
+
+.transport-table td { 
+    padding: 18px; 
+    border-bottom: 1px solid #333; 
+}
+
+/* Row Hover Effect */
+.transport-table tr:hover {
+    background: rgba(123, 116, 188, 0.05);
+}
+
+.badge { 
+    padding: 5px 12px; 
+    border-radius: 6px; 
+    font-weight: 800; 
+    font-size: 11px; 
+}
+
+.student { background: #d1f7ed; color: #1e6b5a; }
+.employee { background: #ffe9d6; color: #8a4a1a; }
+
+/* ===================================================
+   4. BOOKING ACTION CARD (THE "BUY" OPTION)
+   =================================================== */
+.action-footer { 
+    display: flex; 
+    justify-content: center; 
+    padding: 40px 20px; 
+}
+
+.action-card { 
+    background: rgba(123, 116, 188, 0.15); 
+    border: 2px solid #7b74bc; 
+    border-radius: 35px; 
+    padding: 40px 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    max-width: 1100px; 
+    gap: 30px;
+}
+
+.action-text h2 {
+    color: #7b74bc;
+    margin-bottom: 5px;
+}
+
+.buy-now-pill { 
+    background: #7b74bc; 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 800; 
+    padding: 18px 45px; 
+    border-radius: 100px; 
+    transition: 0.3s;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(123, 116, 188, 0.3);
+}
+
+.buy-now-pill:hover { 
+    background: white; 
+    color: #7b74bc; 
+    transform: scale(1.05); 
+}
+
+/* ===================================================
+   5. EXPERIENCE & COMMUNITY FEEDBACK
+   =================================================== */
+.experience-box { 
+    background: rgba(255,255,255,0.03); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    border-radius: 40px; 
+    padding: 50px; 
+    margin: 40px auto 100px;
+    max-width: 1100px;
+}
+
+.section-title { 
+    text-align: center; 
+    color: #7b74bc; 
+    margin-bottom: 40px; 
+}
+
+.experience-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+    margin-bottom: 50px; 
+}
+
+.exp-card { 
+    background: rgba(123, 116, 188, 0.1); 
+    padding: 25px; 
+    border-radius: 20px; 
+    border-left: 6px solid #7b74bc; 
+}
+
+/* FEEDBACK FORM & STAR RATING */
+.feedback-input-box { 
+    background: rgba(0,0,0,0.4); 
+    padding: 40px; 
+    border-radius: 30px; 
+    text-align: center; 
+}
+
+.star-rating { 
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.star { 
+    font-size: 40px; 
+    color: #444; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+/* Star selection logic */
+.star:hover, 
+.star:hover ~ .star, 
+.star.active, 
+.star.active ~ .star { 
+    color: #7b74bc !important; 
+}
+
+#user-suggestion { 
+    width: 100%; 
+    height: 120px; 
+    margin: 25px 0; 
+    background: #222; 
+    border: 1px solid #444; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 15px; 
+    resize: none; 
+}
+
+.buy-now-btn { 
+    background: #7b74bc; 
+    color: white; 
+    border: none; 
+    padding: 15px 50px; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-weight: 800; 
+}
+
+.hidden { display: none !important; }
+
+/* ===================================================
+   6. RESPONSIVENESS
+   =================================================== */
+@media (max-width: 768px) {
+    .action-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .navbar { padding: 15px 20px; }
+}
+/*----------------------------------------------------
+/* Styling for the Add Event Form inputs */
+.custom-input {
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+}
+
+.custom-input:focus {
+    border-color: #7b74bc;
+    outline: none;
+}
+
+#event-category {
+    cursor: pointer;
+}
+
+#event-summary {
+    width: 100%;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    resize: vertical;
+}
+/* Container for scrolling */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-height: 500px; /* Adjust this height as needed */
+    overflow-y: auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+}
+
+/* Custom scrollbar for a better look */
+.experience-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.experience-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.experience-grid::-webkit-scrollbar-thumb {
+    background: #7b74bc;
+    border-radius: 10px;
+}
+
+.experience-grid::-webkit-scrollbar-thumb:hover {
+    background: #9a94d6;
+}
+/* ===================================================
+   1. GLOBAL RESETS & FONTS
+   Matches your Dashboard exactly
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===================================================
+   2. NAVIGATION BAR (Purple Theme)
+   =================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    background-color: #7b74bc;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+/* ===================================================
+   3. MESS HEADER & CONTAINER
+   =================================================== */
+.mess-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-header h1 {
+    color: #7b74bc;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+}
+
+/* ===================================================
+   4. DAY SELECTION (Cards Style)
+   Matches your Dashboard "Social Events" / "TUC" cards
+   =================================================== */
+.day-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(123, 116, 188, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    border-color: #7b74bc;
+    background: rgba(123, 116, 188, 0.1);
+}
+
+/* ===================================================
+   5. MEAL SECTIONS (Breakfast/Lunch/Dinner)
+   =================================================== */
+.meal-label {
+    color: #7b74bc;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 40px 0 15px;
+    border-left: 6px solid #7b74bc;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+.food-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.food-item:hover {
+    border-color: rgba(123, 116, 188, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===================================================
+   6. RATING SYSTEM (10 Stars)
+   =================================================== */
+.avg-text {
+    color: #ffcc00; /* Gold color for stars */
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.rate-select {
+    background: #222;
+    color: #7b74bc;
+    border: 2px solid #7b74bc;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ===================================================
+   7. BACK BUTTON (The Pill Style)
+   Matches your "Buy Now" and "CTA" buttons
+   =================================================== */
+.action-footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-pill {
+    background: #7b74bc;
+    color: white;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(123, 116, 188, 0.3);
+}
+
+.back-pill:hover {
+    background: #ffffff;
+    color: #7b74bc;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ===================================================
+   8. RESPONSIVENESS
+   =================================================== */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .menu-header h1 { font-size: 2.5rem; }
+    .day-card { padding: 20px; font-size: 1.1rem; }
+}
+/*-------------------------------------------------------------------*/
+
+/* ===================================================
+   MOBILE RESPONSIVE OVERRIDES
+   =================================================== */
+@media (max-width: 768px) {
+    /* 1. Navbar Fix: Prevents Overlapping */
+    .navbar {
+        height: auto !important; /* Let bar grow taller */
+        padding: 15px 10px !important;
+    }
+
+    .nav-container {
+        flex-direction: column !important; /* Stack BRAND/BACK above links */
+        gap: 12px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap !important; /* Allow links to wrap to new lines */
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 11px !important; /* Smaller text for mobile */
+    }
+
+    /* 2. Grid Fixes: Force single column layout */
+    .menu-grid, .utility-grid, .food-grid, .experience-grid {
+        grid-template-columns: 1fr !important;
+        padding: 15px !important;
+        gap: 20px !important;
+    }
+
+    /* 3. Hero Section (index.html) Fixes */
+    .container {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .brand-name {
+        font-size: 2.5rem !important;
+    }
+
+    .campus-img {
+        width: 100% !important;
+        max-width: 320px;
+        height: auto !important;
+    }
+}
+/* --- SHARED RESPONSIVE GRID --- */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* --- FORM STYLING & RESPONSIVENESS --- */
+#input-area {
+    margin-top: 80px;
+    padding: 30px;
+    border-top: 2px solid #7b74bc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#event-summary {
+    min-height: 100px;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #444;
+    width: 100%;
+    font-family: inherit;
+}
+
+.file-upload-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.file-upload-box label {
+    font-size: 11px;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.admin-link {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- MOBILE BREAKPOINT (768px and below) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    .input-row {
+        flex-direction: column; /* Stacks Email and Password fields */
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr; /* Single column for event cards */
+    }
+
+    .menu-header h1 {
+        font-size: 2rem;
+    }
+
+    #input-area {
+        padding: 20px 15px;
+    }
+}
+/* --- MESS CONTAINER SPACING --- */
+.mess-container {
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- DAY BUTTONS GRID --- */
+/* Makes the Monday-Sunday buttons look like cards */
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* --- MEAL ITEMS (The dynamic rows) --- */
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+}
+
+/* --- MOBILE BREAKPOINT --- */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none; /* Often best to hide extra links on mobile mess page to focus on food */
+    }
+
+    .mess-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Stack the food name and the rating dropdown on very small screens */
+    .food-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .rate-select {
+        width: 100%; /* Make the dropdown easy to tap with a thumb */
+    }
+
+    .day-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for days on mobile */
+    }
+}

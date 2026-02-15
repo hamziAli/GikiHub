@@ -1,0 +1,303 @@
+/* ===================================================
+   1. GLOBAL RESET & CORE THEME
+   Ensures consistent dark mode across all pages.
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a; /* Dark theme background */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===================================================
+   2. FIXED NAVIGATION BAR & LOGO FIX
+   Resolves the overlap seen in your recent screenshots.
+   =================================================== */
+.navbar {
+    position: sticky; /* Stays at top while scrolling */
+    top: 0;
+    width: 100%;
+    height: 80px; /* Specific height to contain the logo */
+    background-color: #7b74bc; /* Signature Purple */
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-decoration: none !important; /* Forces removal of blue underline */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff !important;
+    text-decoration: none !important; /* Forces removal of blue underline */
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+/* THE LOGO FIX: Keeps the large circular seal inside the bar */
+.nav-logo {
+    height: 65px; /* Adjust this to fit within the 80px navbar */
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    object-fit: contain;
+    display: block; /* Prevents it from floating over content */
+}
+
+/* ===================================================
+   3. UTILITIES HEADER & LAYOUT
+   =================================================== */
+.mess-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 20px; /* Extra space so it doesn't touch the navbar */
+}
+
+.menu-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+}
+
+/* ===================================================
+   4. THEMED CARDS (SOCIETY UPDATES STYLE)
+   Matches the "dark inset box" look.
+   =================================================== */
+.utility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.themed-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(123, 116, 188, 0.2);
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.themed-card:hover {
+    transform: translateY(-10px);
+    border-color: #7b74bc;
+    background: rgba(123, 116, 188, 0.1);
+}
+
+/* Upper part of card */
+.card-body {
+    padding: 50px 20px 20px;
+    text-align: center;
+}
+
+.card-body i {
+    font-size: 3.5rem;
+    color: #7b74bc;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card-body h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Inner dark box (The Inset) */
+.card-footer-box {
+    background: #141414; /* Darker than the card for depth */
+    margin: 0 15px 15px 15px;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-footer-box p {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* ===================================================
+   5. ACTION BUTTONS
+   =================================================== */
+.open-pill {
+    display: inline-block;
+    padding: 10px 40px;
+    background: transparent;
+    color: #7b74bc;
+    border: 2px solid #7b74bc;
+    text-decoration: none !important;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.open-pill:hover {
+    background: #7b74bc;
+    color: #ffffff;
+}
+
+.action-footer {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.back-pill {
+    background: #7b74bc;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 100px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.back-pill:hover {
+    background: #ffffff;
+    color: #7b74bc;
+    transform: scale(1.05);
+}
+
+/* ===================================================
+   6. RESPONSIVENESS
+   =================================================== */
+@media (max-width: 768px) {
+    .navbar { padding: 0 20px; height: auto; padding: 10px 20px; }
+    .nav-links { gap: 15px; }
+    .nav-logo { height: 45px; }
+    .menu-header h1 { font-size: 2.5rem; }
+}
+@media (max-width: 600px) {
+    /* 1. Prevent the navbar from squishing its content */
+    .navbar {
+        height: auto; /* Let it grow vertically if links wrap */
+        padding: 15px 10px;
+    }
+
+    /* 2. Stack the links or make them wrap */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Allows links to go to a new line instead of overlapping */
+        justify-content: center;
+        gap: 10px; /* Reduce gap so they fit better */
+    }
+
+    .nav-links a {
+        font-size: 12px; /* Smaller font for mobile */
+        white-space: nowrap; /* Prevents single words from breaking */
+    }
+
+    /* 3. Fix the "Back" button text size */
+    .nav-brand {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+}
+/* --- RESPONSIVE UTILITY GRID --- */
+.utility-grid {
+    display: grid;
+    /* This allows the two cards to sit side-by-side on desktop but stack on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ensure the container has some side padding on mobile */
+.mess-container {
+    padding: 0 20px;
+}
+
+/* --- RESPONSIVE BREAKPOINT (768px and below) --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; /* Allow navbar to expand vertically */
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stack the BACK button and links */
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Wrap links if they are too wide */
+        justify-content: center;
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    .nav-logo {
+        height: 40px; /* Shrink logo slightly for mobile */
+    }
+
+    .menu-header h1 {
+        font-size: 1.8rem; /* Smaller heading on mobile */
+        margin-top: 20px;
+    }
+
+    .themed-card {
+        margin-bottom: 10px;
+    }
+
+    .back-pill {
+        width: 100%; /* Make button easier to tap */
+        padding: 15px 0;
+    }
+}
